@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+dist.ini
+lib/Mixin/ExtraFields/Driver/DBIC.pm
+t/basic.t
+t/lib/TestSchema.pm
+t/lib/TestSchema/TestObject.pm
+t/lib/TestSchema/TestObjectExtra.pm
