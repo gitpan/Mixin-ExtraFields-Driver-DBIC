@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Mixin-ExtraFields-Driver-DBIC, version
-0.001:
+0.002:
 
   store Mixin::ExtraFields data in a DBIx::Class store
 
