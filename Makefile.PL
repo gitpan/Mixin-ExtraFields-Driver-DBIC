@@ -9,7 +9,7 @@ WriteMakefile(
   NAME      => 'Mixin::ExtraFields::Driver::DBIC',
   AUTHOR    => 'Ricardo\ SIGNES\ \<rjbs\@cpan\.org\>',
   ABSTRACT  => 'store Mixin::ExtraFields data in a DBIx::Class store',
-  VERSION   => '0.002',
+  VERSION   => '0.003',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {

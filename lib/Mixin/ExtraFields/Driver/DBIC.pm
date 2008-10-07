@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Mixin::ExtraFields::Driver::DBIC;
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use base 'Mixin::ExtraFields::Driver';
 # ABSTRACT: store Mixin::ExtraFields data in a DBIx::Class store
@@ -222,7 +222,7 @@ Mixin::ExtraFields::Driver::DBIC - store Mixin::ExtraFields data in a DBIx::Clas
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

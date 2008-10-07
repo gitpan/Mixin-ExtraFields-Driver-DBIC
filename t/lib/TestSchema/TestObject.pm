@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 package TestSchema::TestObject;
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
-use parent 'DBIx::Class';
+use base 'DBIx::Class';
 
 use Mixin::ExtraFields -fields => {
   driver => { class => 'DBIC', rs_moniker => 'TestObjectExtra' }

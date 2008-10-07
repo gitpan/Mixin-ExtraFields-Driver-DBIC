@@ -2,7 +2,7 @@
 abstract: store Mixin::ExtraFields data in a DBIx::Class store
 author: 
   - Ricardo SIGNES <rjbs@cpan.org>
-generated_by: Dist::Zilla::Plugin::MetaYaml version 0.005
+generated_by: Dist::Zilla::Plugin::MetaYaml version 1.000
 license: perl
 name: Mixin-ExtraFields-Driver-DBIC
 requires: 
@@ -13,4 +13,4 @@ requires:
   SQL::Translator: 0.08
   Sub::Exporter: 0
   Test::More: 0
-version: 0.002
+version: 0.003
