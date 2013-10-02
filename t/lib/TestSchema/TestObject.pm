@@ -1,9 +1,7 @@
 use strict;
 use warnings;
 package TestSchema::TestObject;
-our $VERSION = '0.003';
-
-use base 'DBIx::Class';
+use parent 'DBIx::Class';
 
 use Mixin::ExtraFields -fields => {
   driver => { class => 'DBIC', rs_moniker => 'TestObjectExtra' }
@@ -26,6 +24,6 @@ __PACKAGE__->add_columns(
   },
 );
 
-__PACKAGE__->set_primary_key('id'); 
+__PACKAGE__->set_primary_key('id');
 
 1;

@@ -1,9 +1,11 @@
 use strict;
 use warnings;
 package Mixin::ExtraFields::Driver::DBIC;
-our $VERSION = '0.003';
-
-use base 'Mixin::ExtraFields::Driver';
+{
+  $Mixin::ExtraFields::Driver::DBIC::VERSION = '0.004';
+}
+use Mixin::ExtraFields::Driver 0.004 ();
+use parent 'Mixin::ExtraFields::Driver';
 # ABSTRACT: store Mixin::ExtraFields data in a DBIx::Class store
 
 use Carp ();
@@ -222,7 +224,7 @@ Mixin::ExtraFields::Driver::DBIC - store Mixin::ExtraFields data in a DBIx::Clas
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 
@@ -233,29 +235,29 @@ gets the extras.
 
 So, you might create:
 
-    package My::Schema::ObjectExtra;
-    use Mixin::ExtraFields::Driver::DBIC -setup => { table => 'object_extras' };
-    1;
+  package My::Schema::ObjectExtra;
+  use Mixin::ExtraFields::Driver::DBIC -setup => { table => 'object_extras' };
+  1;
 
 ...and elsewhere;
 
-    package My::Schema::Object;
-    use base 'DBIx::Class';
-    ...
-    use Mixin::ExtraFields -fields => {
-      driver => { class => 'DBIC', rs_moniker => 'ObjectExtra' }
-    };
+  package My::Schema::Object;
+  use parent 'DBIx::Class';
+  ...
+  use Mixin::ExtraFields -fields => {
+    driver => { class => 'DBIC', rs_moniker => 'ObjectExtra' }
+  };
 
 =head1 DRIVER ARGS
 
 The following arguments may be provided when defining the driver when setting
 up Mixin::ExtraFields:
 
-    schema       - the schema for the DBIx::Class storage (see below)
-    rs_moniker   - the moniker of the result source for extras
-    id_column    - the name of the column that stores object ids
-    name_column  - the name of the column that stores extra field names
-    value_column - the name of the column that stores extra field values
+  schema       - the schema for the DBIx::Class storage (see below)
+  rs_moniker   - the moniker of the result source for extras
+  id_column    - the name of the column that stores object ids
+  name_column  - the name of the column that stores extra field names
+  value_column - the name of the column that stores extra field values
 
 C<schema> may be an actual DBIx::Class::Schema object or a coderef which, when
 called on an object, returns a schema.  The default value assumes that objects
@@ -266,30 +268,24 @@ will be DBIx::Class::Row objects, and returns their schema.
 When using Mixin::ExtraFields::Driver::DBIC to set up a table result source,
 the following values may be in the argument to C<-setup> in the import call:
 
-    table        - (required) the name of the table in the storage
-    id_column    - the name of the column that stores object ids
-    name_column  - the name of the column that stores extra field names
-    value_column - the name of the column that stores extra field values
+  table        - (required) the name of the table in the storage
+  id_column    - the name of the column that stores object ids
+  name_column  - the name of the column that stores extra field names
+  value_column - the name of the column that stores extra field values
 
-=begin Pod::Coverage
-
-    id_column
-    name_column
-    value_column
-
-=end Pod::Coverage
+=for Pod::Coverage   id_column
+  name_column
+  value_column
 
 =head1 AUTHOR
 
-  Ricardo SIGNES <rjbs@cpan.org>
+Ricardo SIGNES <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2008 by Ricardo SIGNES.
+This software is copyright (c) 2013 by Ricardo SIGNES.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
-
+=cut
